@@ -51,6 +51,24 @@ const { title } = Astro.props;
 			if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
 			document.documentElement.classList.add('dark');
 			}
+
+			// Verificar si el dispositivo está en modo móvil
+			function handleMobileMode(mq) {
+			if (mq.matches) {
+				// Agregar lógica para el modo móvil aquí
+				console.log('Modo móvil activado');
+			} else {
+				// Agregar lógica para el modo no móvil aquí
+				console.log('Modo no móvil activado');
+			}
+			}
+
+			// Registrar el manejador para el modo móvil
+			const mobileModeQuery = window.matchMedia('(max-width: 767px)');
+			handleMobileMode(mobileModeQuery);
+
+			// Escuchar cambios en el modo móvil
+			mobileModeQuery.addListener(handleMobileMode);
 		});
 		</script>
 	</head>
