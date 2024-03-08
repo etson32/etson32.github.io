@@ -1,2 +1,11 @@
 {
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "prettier.singleAttributePerLine": false,
+  "prettier.semi": true,
+  "prettier.bracketSameLine": true,
+  "prettier.bracketSpacing": true,
+  "prettier.useTabs": false,
+  "prettier.vueIndentScriptAndStyle": false,
+  "prettier.printWidth": 150
 }
