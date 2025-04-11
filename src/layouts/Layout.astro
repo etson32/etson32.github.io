@@ -1,5 +1,7 @@
 ---
 import Header from "../components/Header.astro";
+import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
 
 interface Props {
   title: string;
@@ -18,7 +20,7 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <script>
-      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      // Al cargar la página o al cambiar de tema, es mejor agregarlo en línea en "head" para evitar FOUC
       if (
         localStorage.getItem("color-theme") === "dark" ||
         (!("color-theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
@@ -73,7 +75,7 @@ const { title } = Astro.props;
       <div class="text-left lg:flex lg:flex-row-reverse lg:justify-center lg:items-center md:gap-x-4">
         <div class="Hero-image flex justify-center mb-6 w-16 lg:w-1/5">
           <img
-            src="/images/photo.jpg"
+            src="/images/photo.jpeg"
             alt=""
             class="drop-shadow-lg w-full rounded-full object-contain shadow-lg dark:shadow-dark-800"
             loading="lazy"
@@ -86,7 +88,7 @@ const { title } = Astro.props;
           <span class="text-primary-600 dark:#ff004f"> soy Etson</span>
         </h1>
         <span
-          class="font-semibold inline-flex animate-background-shine bg-[linear-gradient(110deg,#64748b,45%,#0f172a,55%,#64748b)] dark:bg-[linear-gradient(110deg,#ff5151,45%,#400d0d,55%,#ff5151)] bg-[length:250%_100%] bg-clip-text text-xl text-transparent">
+          class="font-semibold inline-flex animate-background-shine bg-[linear-gradient(110deg,#64748b,45%,#0f172a,55%,#64748b)] dark:bg-[linear-gradient(110deg,#ff5151,45%,#400d0d,55%,#ff5151)] bg-[length:250%_100%] bg-clip-text text-xl text-transparent pt-1">
           Desarrollador de software</span
         >
       </header>
@@ -94,8 +96,9 @@ const { title } = Astro.props;
         Cuento con mas de 1 año de experiencia en desarrollo de software y asistencia en entornos de TI.<!-- -->
         <span class="text-crusta-800 dark:text-crusta-300">Bachiller en Ingenieria Informática y de Sistemas</span>.<!-- -->
         <span class="text-daintree-700 dark:text-daintree-200">Destaco por mi organización y capacidad de adaptación en cualquier proyecto.</span> Fomento
-        un entorno colaborativo y valoro el trabajo en equipo. Mi pasión por la inteligencia artificial me impulsa constantemente a buscar nuevas formas
-        de aplicar mis conocimientos en proyectos innovadores.
+        un entorno colaborativo y valoro el trabajo en equipo.
+        <!-- Mi pasión por la inteligencia artificial me impulsa constantemente a buscar nuevas formas
+        de aplicar mis conocimientos en proyectos innovadores. -->
       </h2>
       <ul class="mt-10 flex flex-wrap gap-4 justify-start">
         <li>
@@ -150,128 +153,26 @@ const { title } = Astro.props;
       </ul>
     </section>
 
-    <!-- Seccion de Experiencia -->
-    <section class="pt-24 container mx-auto px-2 lg:w-[740px]" id="experience">
-      <h2 class="text-3xl font-bold text-dark-700 dark:text-primary-50">Experiencia</h2><article class="container px-2 mt-10">
-        <ul class="relative border-l border-dark-400 dark:border-dark-700">
-          <li class="mb-8 md:mb-6 ml-6">
-            <span
-              class="absolute flex items-center justify-center w-6 h-6 bg-dark-600 rounded-full -left-3 ring-8 ring-dark-50 dark:ring-dark-950 dark:bg-dark-600"
-              ><svg
-                aria-hidden="true"
-                class="w-4 h-4 text-primary-100 dark:text-primary-100"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-                ><path
-                  fill-rule="evenodd"
-                  d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                  clip-rule="evenodd"></path></svg
-              ></span
-            ><h3 class="flex items-center gap-2 mb-1 text-lg font-semibold text-primary-500 dark:text-primary-600">
-              Investigación en inteligencia artificial
-              <span class="dark:text-white text-dark-700 font-normal">-</span><span class="text-sm text-crusta-800 dark:text-crusta-300/90"
-                >Simbig 2023</span
-              >
-            </h3><time class="block mb-2 text-sm font-normal leading-none text-primary-950/80 dark:text-primary-200/90"
-              >Febrero 2023 - Julio 2023</time
-            ><p class="mb-4 font-normal text-dark-700 dark:text-dark-200 text-base text-pretty">
-              Se desarrolló un modelo para predecir los tiempos de viaje entre paraderos de la empresa Patron de San Jeronimo, utilizando redes
-              neuronales recurrentes hibridas. Aprobada para su publicacion en la revista Springer.
-            </p>
-          </li><li class="mb-8 md:mb-6 ml-6">
-            <span
-              class="absolute flex items-center justify-center w-6 h-6 bg-dark-600 rounded-full -left-3 ring-8 ring-dark-50 dark:ring-dark-950 dark:bg-dark-600"
-              ><svg
-                aria-hidden="true"
-                class="w-4 h-4 text-primary-100 dark:text-primary-100"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-                ><path
-                  fill-rule="evenodd"
-                  d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                  clip-rule="evenodd"></path></svg
-              ></span
-            ><h3 class="flex items-center gap-2 mb-1 text-lg font-semibold text-primary-700 dark:text-primary-600">
-              Desarrollador web
-              <span class="dark:text-white text-dark-700 font-normal">-</span><span class="text-sm text-crusta-800 dark:text-crusta-300/90"
-                >Unidad de Gestion Educativa Local Canchis</span
-              >
-            </h3><time class="block mb-2 text-sm font-normal leading-none text-primary-950/80 dark:text-primary-200/90"
-              >Junio 2022 - Septiembre 2022</time
-            ><p class="mb-4 font-normal text-dark-700 dark:text-dark-200 text-base text-pretty">
-              Diseñé e implementé de un sistema web especializado en la emisión de boletas de pago, orientado a docentes cesantes, pertenecientes a la
-              Unidad de Gestión Educativa Local (UGEL) Canchis.
-            </p>
-          </li><li class="mb-8 md:mb-6 ml-6">
-            <span
-              class="absolute flex items-center justify-center w-6 h-6 bg-dark-600 rounded-full -left-3 ring-8 ring-dark-50 dark:ring-dark-950 dark:bg-dark-600"
-              ><svg
-                aria-hidden="true"
-                class="w-4 h-4 text-primary-100 dark:text-primary-100"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-                ><path
-                  fill-rule="evenodd"
-                  d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                  clip-rule="evenodd"></path></svg
-              ></span
-            ><h3 class="flex items-center gap-2 mb-1 text-lg font-semibold text-primary-700 dark:text-primary-600">
-              Desarrollador web
-              <span class="dark:text-white text-dark-700 font-normal">-</span><span class="text-sm text-crusta-800 dark:text-crusta-300/90"
-                >Unidad de Gestion Educativa Local Canchis</span
-              >
-            </h3><time class="block mb-2 text-sm font-normal leading-none text-primary-950/80 dark:text-primary-200/90">Abril 2022 - Mayo 2022</time
-            ><p class="mb-4 font-normal text-dark-700 dark:text-dark-200 text-base text-pretty">
-              Desarrollé un buscador web destinado a facilitar la identificación de docentes calificados para la evaluación de lenguas originarias,
-              específicamente diseñado para la Unidad de Gestión Educativa Local (UGEL) Canchis. Mejorando el proceso de selección y asegurando la
-              idoneidad del personal.
-            </p>
-          </li><li class="mb-8 md:mb-6 ml-6">
-            <span
-              class="absolute flex items-center justify-center w-6 h-6 bg-dark-600 rounded-full -left-3 ring-8 ring-dark-50 dark:ring-dark-950 dark:bg-dark-600"
-              ><svg
-                aria-hidden="true"
-                class="w-4 h-4 text-primary-100 dark:text-primary-100"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-                ><path
-                  fill-rule="evenodd"
-                  d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                  clip-rule="evenodd"></path></svg
-              ></span
-            ><h3 class="flex items-center gap-2 mb-1 text-lg font-semibold text-primary-700 dark:text-primary-600">
-              Aprendizaje autónomo
-              <span class="dark:text-white text-dark-700 font-normal">-</span><span class="text-sm text-crusta-800 dark:text-crusta-300/90"
-                >Autónomo</span
-              >
-            </h3><time class="block mb-2 text-sm font-normal leading-none text-primary-950/80 dark:text-primary-200/90">2021 - 2022</time><p
-              class="mb-4 font-normal text-dark-700 dark:text-dark-200 text-base text-pretty">
-              Inicié mi incursión en el desarrollo web a través de los primeros pasos dados en mis clases de ingeniería, combinados con un enfoque
-              autodidacta respaldado por cursos virtuales. Durante este periodo, concebí varios proyectos personales que no solo reforzaron mis
-              habilidades, sino que también actuaron como acceso al ámbito laboral en la industria de tecnologías de la información.
-            </p>
-          </li>
-        </ul>
-      </article>
-    </section>
-
-    <!-- Seccion de proyectos -->
-    <section class="pt-24 container mx-auto px-2 lg:w-[740px]" id="projects"></section>
-
-    <main class="max-w-5xl px-4 m-auto">
-      <slot />
-    </main>
+    <Experience />
+    <Projects />
   </body>
+
+  <main class="max-w-5xl px-4 m-auto">
+    <slot />
+  </main>
 </html>
+
 <style is:global>
   html {
     font-family: system-ui, sans-serif;
     background: #13151a;
     background-size: 224px;
     color-scheme: dark light;
+    scroll-behavior: smooth;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 </style>
